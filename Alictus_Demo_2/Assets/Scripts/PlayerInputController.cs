@@ -10,6 +10,18 @@ public class PlayerInputController : MonoBehaviour
 
     private bool isPlaying;
 
+    private void OnEnable()
+    {
+        EventManager.OnLevelStart.AddListener( () => isPlaying = true );
+        EventManager.OnLevelFinish.AddListener( () => isPlaying = false );
+    }
+
+    private void OnDisable()
+    {
+        EventManager.OnLevelStart.RemoveListener( () => isPlaying = true );
+        EventManager.OnLevelFinish.RemoveListener( () => isPlaying = false );
+    }
+
     void Awake()
     {
         mainCam = Camera.main;
@@ -38,7 +50,6 @@ public class PlayerInputController : MonoBehaviour
 
                 if (!isTarget) return;
 
-                Debug.Log(hit.transform.name);
                 selectedObject = hit.transform.gameObject;
             }
         }

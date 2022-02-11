@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Target
+  - Body Part
+  - Laser Light
   layers:
   - Default
   - TransparentFX
@@ -13,8 +15,8 @@ TagManager:
   - Water
   - UI
   - Target
-  - 
-  - 
+  - Body Part
+  - Laser Light
   - 
   - 
   - 
