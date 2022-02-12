@@ -20,7 +20,6 @@ public class TargetPredicter : MonoBehaviour
         _transform = transform;
     }
 
-    // Update is called once per frame
     void Update()
     {
         CheckLaserBeams();
@@ -29,24 +28,6 @@ public class TargetPredicter : MonoBehaviour
     private void CheckLaserBeams()
     {
         RaycastHit hit ;
-
-        if (Physics.Raycast(_transform.position, Vector3.forward, out hit, raycastDistance))
-        {
-            if (!hit.transform.gameObject.CompareTag("Laser Light")) return;
-
-            spriteRenderer.color = Color.red;
-            Debug.Log("Obstacle");
-        }
-        else
-        {
-            spriteRenderer.color = Color.green;
-        }
-    }
-
-    private RaycastHit CastRay()
-    {
-        RaycastHit hit;
-        Physics.Raycast(_transform.position, Vector3.forward, out hit, raycastDistance);
-        return hit;
+        spriteRenderer.color = Physics.Raycast(_transform.position, Vector3.forward, out hit, raycastDistance, layerMask) ? Color.red : Color.green;
     }
 }
