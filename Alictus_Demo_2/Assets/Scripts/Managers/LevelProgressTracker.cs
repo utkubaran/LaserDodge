@@ -22,6 +22,7 @@ public class LevelProgressTracker : MonoBehaviour
         CheckDistance();
     }
 
+    // Checks player's distance to the finish line
     private void CheckDistance()
     {
         distanceToFinish = finishLine.position.z - playerPos.position.z;

@@ -8,16 +8,21 @@ public class BoyAnimationController : MonoBehaviour
 
     private void OnEnable()
     {
-        EventManager.OnLevelFinish.AddListener( () => animator?.SetBool("isEnded", true) );
+        EventManager.OnLevelFinish.AddListener(PlayDanceAnimation);
     }
 
     private void OnDisable()
     {
-        EventManager.OnLevelFinish.RemoveListener( () => animator?.SetBool("isEnded", true) );
+        EventManager.OnLevelFinish.RemoveListener(PlayDanceAnimation);
     }
 
     void Awake()
     {
         animator = GetComponent<Animator>();
+    }
+
+    private void PlayDanceAnimation()
+    {
+        animator?.SetBool("isEnded", true);
     }
 }

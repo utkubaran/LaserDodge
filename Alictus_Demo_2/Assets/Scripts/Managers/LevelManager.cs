@@ -14,12 +14,14 @@ public class LevelManager : MonoBehaviour
     {
         EventManager.OnTapToPlayButtonPressed.AddListener(StartGameplay);
         EventManager.OnNextLevelButtonPressed.AddListener(LoadNextLevel);
+        EventManager.OnRetryButtonPressed.AddListener(LoadNextLevel);
     }
 
     private void OnDisable()
     {
         EventManager.OnTapToPlayButtonPressed.RemoveListener(StartGameplay);
         EventManager.OnNextLevelButtonPressed.RemoveListener(LoadNextLevel);
+        EventManager.OnRetryButtonPressed.RemoveListener(LoadNextLevel);
     }
 
     private void Awake()

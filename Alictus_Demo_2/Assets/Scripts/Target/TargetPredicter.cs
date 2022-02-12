@@ -25,6 +25,10 @@ public class TargetPredicter : MonoBehaviour
         CheckLaserBeams();
     }
 
+    /// <summary>
+    /// Checks a specific distance for laser beams.
+    /// If so, drag pointers' colors are changed upon raycast hit.
+    /// </summary>
     private void CheckLaserBeams()
     {
         RaycastHit hit ;

@@ -9,17 +9,23 @@ public class Boy : MonoBehaviour
 
     private void OnEnable()
     {
-        EventManager.OnLevelFinish.AddListener( () => rigBuilder.enabled = false );
+        EventManager.OnLevelFinish.AddListener(DisableRigBuilder);
     }
 
     private void OnDisable()
     {
-        EventManager.OnLevelFinish.RemoveListener( () => rigBuilder.enabled = false ); 
+        EventManager.OnLevelFinish.RemoveListener(DisableRigBuilder); 
     }
 
     void Start()
     {
         rigBuilder = GetComponent<RigBuilder>();
+    }
+
+    // Disables rig builder to play animation
+    private void DisableRigBuilder()
+    {
+        rigBuilder.enabled = false;
     }
 
 }
