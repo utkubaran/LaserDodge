@@ -13,6 +13,9 @@ public class BoyMovementController : MonoBehaviour
     [SerializeField]
     private LayerMask layerMask;
 
+    [SerializeField]
+    private float slowerMultiplier = 0.4f;
+
     private Transform _transform;
 
     private bool isPlaying;
@@ -46,7 +49,8 @@ public class BoyMovementController : MonoBehaviour
         if (!isPlaying) return;
 
         RaycastHit hit;
-        movementSpeed = Physics.Raycast(_transform.position, Vector3.forward, out hit, decelerationRange, layerMask) ? 2.5f : 5f;
-        _transform.position += new Vector3(0f, 0f, movementSpeed * Time.deltaTime);
+        // Checks the gate in the range, if so, movement speed is decreased.
+        float speed = Physics.Raycast(_transform.position, Vector3.forward, out hit, decelerationRange, layerMask) ? (movementSpeed * slowerMultiplier) : movementSpeed;
+        _transform.position += new Vector3(0f, 0f, speed * Time.deltaTime);
     }
 }

@@ -864,7 +864,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 1578310578}
-  raycastDistance: 15
+  raycastDistance: 12.5
   layerMask:
     serializedVersion: 2
     m_Bits: 256
@@ -893,11 +893,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5430736626802997596, guid: 7196b150b08214036be9a9608c501f97, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.93
+      value: -3
       objectReference: {fileID: 0}
     - target: {fileID: 5430736626802997596, guid: 7196b150b08214036be9a9608c501f97, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.66
+      value: 2.08
       objectReference: {fileID: 0}
     - target: {fileID: 5430736626802997596, guid: 7196b150b08214036be9a9608c501f97, type: 3}
       propertyPath: m_LocalPosition.z
@@ -905,7 +905,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5430736626802997596, guid: 7196b150b08214036be9a9608c501f97, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.87503576
+      value: 0.8437943
       objectReference: {fileID: 0}
     - target: {fileID: 5430736626802997596, guid: 7196b150b08214036be9a9608c501f97, type: 3}
       propertyPath: m_LocalRotation.x
@@ -917,7 +917,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5430736626802997596, guid: 7196b150b08214036be9a9608c501f97, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.48405817
+      value: 0.5366668
       objectReference: {fileID: 0}
     - target: {fileID: 5430736626802997596, guid: 7196b150b08214036be9a9608c501f97, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -929,7 +929,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5430736626802997596, guid: 7196b150b08214036be9a9608c501f97, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 57.902
+      value: 64.914
       objectReference: {fileID: 0}
     - target: {fileID: 7593357159708447840, guid: 7196b150b08214036be9a9608c501f97, type: 3}
       propertyPath: m_Name
@@ -1022,11 +1022,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8173891492971950052, guid: 235937ea2a9f9484eb3b27f6ff5200da, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.25
+      value: -0.15
       objectReference: {fileID: 0}
     - target: {fileID: 8173891492971950052, guid: 235937ea2a9f9484eb3b27f6ff5200da, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.56
+      value: 0.19
       objectReference: {fileID: 0}
     - target: {fileID: 8173891492971950052, guid: 235937ea2a9f9484eb3b27f6ff5200da, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1566,7 +1566,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 656217053}
-  raycastDistance: 15
+  raycastDistance: 12.5
   layerMask:
     serializedVersion: 2
     m_Bits: 256
@@ -2549,7 +2549,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 1863700053}
-  raycastDistance: 15
+  raycastDistance: 12.5
   layerMask:
     serializedVersion: 2
     m_Bits: 256
@@ -3681,7 +3681,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1691637307}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 250}
+  m_LocalPosition: {x: 0, y: 0, z: 215}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 6264784853649418635}
@@ -4435,7 +4435,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 1772828259}
-  raycastDistance: 15
+  raycastDistance: 12.5
   layerMask:
     serializedVersion: 2
     m_Bits: 256
@@ -4498,7 +4498,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 833837617}
-  raycastDistance: 15
+  raycastDistance: 12.5
   layerMask:
     serializedVersion: 2
     m_Bits: 256
@@ -4806,6 +4806,8 @@ GameObject:
   - component: {fileID: 919132149404200382}
   - component: {fileID: 919132149404200384}
   - component: {fileID: 919132149404200385}
+  - component: {fileID: 919132149404200386}
+  - component: {fileID: 919132149404200387}
   m_Layer: 0
   m_Name: Boy
   m_TagString: Boy
@@ -4947,11 +4949,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c37fecab90d7aaa4295b50b22697fcfc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 7.5
-  decelerationRange: 15
+  movementSpeed: 10
+  decelerationRange: 12.5
   layerMask:
     serializedVersion: 2
     m_Bits: 512
+  slowerMultiplier: 0.3
+--- !u!114 &919132149404200386
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919132149404200381}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d3d7585d07fbd242bda8e25b5119a96, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &919132149404200387
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919132149404200381}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 839ae593a94737e46bce2dadcc06535c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!137 &924910284913068435
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 0

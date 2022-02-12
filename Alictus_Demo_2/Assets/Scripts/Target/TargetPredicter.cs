@@ -15,6 +15,18 @@ public class TargetPredicter : MonoBehaviour
 
     private Transform _transform;
 
+    private void OnEnable()
+    {
+        EventManager.OnLevelFail.AddListener( () => spriteRenderer.gameObject.SetActive(false) );
+        EventManager.OnLevelFinish.AddListener( () => spriteRenderer.gameObject.SetActive(false) );
+    }
+
+    private void OnDisable()
+    {
+        EventManager.OnLevelFail.RemoveListener( () => spriteRenderer.gameObject.SetActive(false) );
+        EventManager.OnLevelFinish.RemoveListener( () => spriteRenderer.gameObject.SetActive(false) );
+    }
+
     void Awake()
     {
         _transform = transform;
