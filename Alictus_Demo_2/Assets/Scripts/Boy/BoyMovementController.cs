@@ -36,11 +36,6 @@ public class BoyMovementController : MonoBehaviour
         _transform = transform;
     }
 
-    void Start()
-    {
-        isPlaying = true;           // todo delete after events are enabled
-    }
-
     void Update()
     {
         Move();

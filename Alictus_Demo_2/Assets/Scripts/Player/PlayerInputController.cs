@@ -13,23 +13,20 @@ public class PlayerInputController : MonoBehaviour
     private void OnEnable()
     {
         EventManager.OnLevelStart.AddListener( () => isPlaying = true );
+        EventManager.OnLevelFail.RemoveListener( () => isPlaying = false );
         EventManager.OnLevelFinish.AddListener( () => isPlaying = false );
     }
 
     private void OnDisable()
     {
         EventManager.OnLevelStart.RemoveListener( () => isPlaying = true );
+        EventManager.OnLevelFail.RemoveListener( () => isPlaying = false );
         EventManager.OnLevelFinish.RemoveListener( () => isPlaying = false );
     }
 
     void Awake()
     {
         mainCam = Camera.main;
-    }
-
-    private void Start()
-    {
-        isPlaying = true;       // todo delete after events are enabled
     }
 
     void Update()

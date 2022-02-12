@@ -12,14 +12,14 @@ public class LevelManager : MonoBehaviour
 
     private void OnEnable()
     {
-        // EventManager.OnTapToPlayButtonPressed.AddListener(StartGameplay);
-        // EventManager.OnNextLevelButtonPressed.AddListener(LoadNextLevel);
+        EventManager.OnTapToPlayButtonPressed.AddListener(StartGameplay);
+        EventManager.OnNextLevelButtonPressed.AddListener(LoadNextLevel);
     }
 
     private void OnDisable()
     {
-        // EventManager.OnTapToPlayButtonPressed.RemoveListener(StartGameplay);
-        // EventManager.OnNextLevelButtonPressed.RemoveListener(LoadNextLevel);
+        EventManager.OnTapToPlayButtonPressed.RemoveListener(StartGameplay);
+        EventManager.OnNextLevelButtonPressed.RemoveListener(LoadNextLevel);
     }
 
     private void Awake()
